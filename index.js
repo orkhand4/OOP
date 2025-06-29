@@ -32,4 +32,4 @@ class Account {
 }
 
 const account1 = new Account("hakuna777", "matata333", 3000);
-console.log(account1.username);
+console.log(account1.balance);
