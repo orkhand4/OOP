@@ -58,11 +58,29 @@ class Laptop extends Computer {
     this.weight = weight; // in kg
   }
   showData() {
-    return `${super.showData()}, Screen Size: ${this.screenSize} inches, Battery Life: ${this.batteryLife} hours, Weight: ${this.weight} kg`;
+    return `${super.showData()}, Screen Size: ${
+      this.screenSize
+    } inches, Battery Life: ${this.batteryLife} hours, Weight: ${
+      this.weight
+    } kg`;
+  }
+}
+
+class PC extends Computer {
+  constructor(vendor, model, ram, storage, coolerCount, caseModel, powerSupply) {
+    super(vendor, model, ram, storage);
+    this.coolerCount = coolerCount; // number of coolers
+    this.caseModel = caseModel; // model of the case
+    this.powerSupply = powerSupply; // power supply in watts
+  }
+  showData() {
+    return `${super.showData()}, Coolers: ${this.coolerCount}, Case Model: ${this.caseModel}, Power Supply: ${this.powerSupply}W`;
   }
 }
 
 const comp1 = new Computer("HP", "Pavilion", 16, 512);
 const laptop1 = new Laptop("Dell", "XPS 13", 16, 256, 13.3, 12, 1.2);
+const pc1 = new PC("Lenovo", "ThinkCentre", 32, 1024, 2, "Mid Tower", 650);
 console.log(comp1.showData());
 console.log(laptop1.showData());
+console.log(pc1.showData());
