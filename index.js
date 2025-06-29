@@ -63,4 +63,6 @@ class Laptop extends Computer {
 }
 
 const comp1 = new Computer("HP", "Pavilion", 16, 512);
-console.log(comp1);
+const laptop1 = new Laptop("Dell", "XPS 13", 16, 256, 13.3, 12, 1.2);
+console.log(comp1.showData());
+console.log(laptop1.showData());
