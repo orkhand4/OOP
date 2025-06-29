@@ -1,3 +1,5 @@
+// Encapsulation in JavaScript using private fields
+/*
 class Account {
   #username;
   #balance;
@@ -33,3 +35,32 @@ class Account {
 
 const account1 = new Account("hakuna777", "matata333", 3000);
 console.log(account1.balance);
+*/
+
+// Inheritance in JavaScript using classes
+class Computer {
+  constructor(vendor, model, ram, storage) {
+    this.vendor = vendor;
+    this.model = model;
+    this.ram = ram;
+    this.storage = storage;
+  }
+  showData() {
+    return `Vendor: ${this.vendor}, Model: ${this.model}, RAM: ${this.ram}GB, Storage: ${this.storage}GB`;
+  }
+}
+
+class Laptop extends Computer {
+  constructor(vendor, model, ram, storage, screenSize, batteryLife, weight) {
+    super(vendor, model, ram, storage);
+    this.screenSize = screenSize; // in inches
+    this.batteryLife = batteryLife; // in hours
+    this.weight = weight; // in kg
+  }
+  showData() {
+    return `${super.showData()}, Screen Size: ${this.screenSize} inches, Battery Life: ${this.batteryLife} hours, Weight: ${this.weight} kg`;
+  }
+}
+
+const comp1 = new Computer("HP", "Pavilion", 16, 512);
+console.log(comp1);
